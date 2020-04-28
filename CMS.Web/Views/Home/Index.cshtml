@@ -1,0 +1,614 @@
+﻿@using CMS.Web.Base;
+@using CMS.Models;
+@{
+    ViewBag.Title = "Trang Chủ";
+}
+<!--Slide show-->
+    <div>
+        <div id="loader" class="center"></div>
+        <script>
+            document.onreadystatechange = function () {
+                if (document.readyState !== "complete") {
+                    document.querySelector(
+                        "body").style.visibility = "hidden";
+                    document.querySelector(
+                        "#loader").style.visibility = "visible";
+                } else {
+                    document.querySelector(
+                        "#loader").style.display = "none";
+                    document.querySelector(
+                        "body").style.visibility = "visible";
+                }
+            };
+        </script>
+        <!-- banner -->
+        <div class="banner" id="home">
+            <div class="container">
+                <div class="banner-text text-center">
+                    <div class="callbacks_container">
+                        <ul class="rslides" id="slider3">
+                            <li>
+                                <div class="slider-info">
+                                    <h3 class="text-capitalize">Nhận giặt là các loại với giàn máy hiện đại nhất</h3>
+                                    <a class="btn btn-primary  mt-4 text-capitalize scroll" href="#about" role="button">đọc thêm</a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="slider-info">
+                                    <h3 class="text-capitalize">Nhận vệ sinh thảm, sofa, đệm,... tại nhà, văn phòng</h3>
+                                    <a class="btn btn-primary  mt-4 text-capitalize scroll" href="#about" role="button">đọc thêm</a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="slider-info">
+                                    <h3 class="text-capitalize">Lắp đặt sửa chữa đồ điện lạnh, đồ điện nước,...</h3>
+                                    <a class="btn btn-primary  mt-4 text-capitalize scroll" href="#about" role="button">đọc thêm</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //banner -->
+        <!-- about -->
+        <section class="about-w3ls" id="about">
+            <div class="container">
+                <div class="jumbotron text-center pt-0">
+                    <img src="~/images/LOGO HP NEW-01.png" style="width: 220px" alt="" class="img-fluid rounded-circle">
+                    <h1 class="ab-title my-3">Chúng tôi cam kết đem lại chất lượng tốt nhất và giá cả hợp lý nhất</h1>
+                    <h2 class="lead" style="font-weight: 400; font-family: sans-serif">
+                        Bạn đang cảm thấy mệt mỏi hay rất ngại với việc phải giặt giũ đống quần áo "chất cao như núi" mỗi ngày? Phơi đồ, ủi đồ, gấp đồ đang "chiếm lĩnh" hết quỹ thời gian nghỉ ngơi và dành cho gia đình của bạn? Chưa kể những ngày mưa nồm quần áo phơi mãi không khô, hôi hám khiến bạn rất khó chịu… Bạn ước rằng sẽ có một ai đó thay mình làm tất cả những việc khó chịu đó?
+                    </h2>
+                    <hr class="my-4">
+                    <h2 class="lead" style="font-weight: 400; font-family: sans-serif">
+                        Hãy để GIẶT LÀ HP giúp bạn xử lý gọn gàng và nhanh chóng. Chúng tôi cam kết đêm lại cho bạn dịch vụ nhanh chóng, giá vả hợp lý, chất lượng tốt nhất, tạo sự yên tâm và tin tưởng
+                    </h2>
+                    <p class="lead">
+                        <a class="btn btn-primary btn-lg mt-3 scroll" href="#services" role="button">Đọc thêm</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- //about -->
+        <!--services-->
+        <div class="agileits-services py-md-5 py-3" id="services">
+            <div class="container">
+                <h3 class="w3ls-title text-center text-capitalize pb-md-5 pb-4">Loại hình dịch vụ</h3>
+
+                <div class="agileits-services-row row py-md-5 pb-5">
+                    <div class="col-lg-4 col-md-6 agileits-services-grids">
+                        <span class="fab fa-uniregistry p-4"></span>
+                        <h4 class="mt-2 mb-3">Nhận giặt tất cả loại</h4>
+                        <p>
+                            Từ quần áo mặc hàng ngày, đồ dạ hội,… đến thảm sàn, ghế sofa, đệm giường, đệm ghế, ruột gối bông, chăn bông, thú bông, đồ da, đồ giả da, rèm cửa (có nhận tháo lắp rèm)
+                        </p>
+                        <img src="~/images/hinhanh1.jpeg" style="width: inherit; height: 250px" />
+                    </div>
+                    <div class="col-lg-4 col-md-6 agileits-services-grids mt-md-0 mt-3">
+
+                        <span class="fab fa-jenkins p-4"></span>
+                        <h4 class="mt-2 mb-3">Nhận giặt khô</h4>
+                        <p>
+                            Các loại trang phục bằng lông vũ/ lông cừu, chăn, ga, gối lông vũ/ lông cừu, các đồ dạ, len và các loại trang phục khác với chất liệu khó tính như đồ lụa tơ tằm, vải tac-ta mặt lụa... với công nghệ Nhật
+                        </p>
+                        <img src="~/images/hinhanh2.jpg" style="width: inherit; height: 250px" />
+
+                    </div>
+                    <div class="col-lg-4 col-md-6 agileits-services-grids mt-lg-0 mt-3">
+                        <span class="fab fa-schlix p-4"></span>
+                        <h4 class="mt-2 mb-3">Nhận vệ sinh thảm, đệm, sofa,...</h4>
+                        <p>
+                            Có dịch vụ vệ sinh thảm sàn, sofa, đệm các loại tại nhà, văn phòng, nhà hàng... với thiết bị hiện đại cùng đội ngũ nhân viên chuyên nghiệp; đem đến sự sạch sẽ, thơm tho và sự hài lòng của bạn
+                        </p>
+                        <img src="~/images/hinhanh3.jpg" style="width: inherit; height: 250px" />
+
+                    </div>
+                    <div class="col-lg-4 col-md-6 agileits-services-grids mt-lg-0 mt-3">
+                        <span class="fa fa-shipping-fast p-4"></span>
+                        <h4 class="mt-2 mb-3">NHẬN - TRẢ đồ tại nhà</h4>
+                        <p>
+                            Nhận trả đồ với khách hàng qua liên lạc trực tiếp bằng điện thoại hoặc online theo 2 múi giờ trong ngày <br /> (7h30 – 9h30 sáng và 6h – 8h tối hàng ngày)
+                        </p>
+                        <br />
+                        <img src="~/images/hinhanh4.jpg" style="width: inherit; height: 250px" />
+                    </div>
+                    <div class="col-lg-4 col-md-6 agileits-services-grids mt-lg-0 mt-3">
+
+                        <span class="fas fa-magic p-4"></span>
+                        <h4 class="mt-2 mb-3">Sửa chữa quần áo</h4>
+                        <p>
+                            Chúng tôi có dịch vụ sửa chữa quần áo (thay khóa, cắt gấu, thu hẹp, nới rộng,.. ) với đội ngũ thợ có tay nghề cao và kinh nghiệm lâu năm sẽ đem đến cho bạn sự yên tâm và hài lòng nhất
+                        </p>
+                        <img src="~/images/hinhanh5.png" style="width: inherit; height: 250px" />
+                    </div>
+                    <div class="col-lg-4 col-md-6 agileits-services-grids mt-lg-0 mt-3">
+                        <span class="fas fa-plug p-4"></span>
+                        <h4 class="mt-2 mb-3">Lắp đặt, sửa chữa đồ điện</h4>
+                        <p>
+                            Với đội ngũ thợ lành nghề, chuyên môn cao và có tâm, chúng tôi giúp bạn lắp đặt hoặc kịp thời sửa chữa những hỏng hóc đối với đồ điện lạnh (tủ lạnh, điều hòa,... ) hoặc với các đồ điện nước thiết yếu hàng ngày
+                        </p>
+                        <img src="~/images/hinhanh6.jpg" style="width: inherit; height: 250px" />
+                    </div>
+                </div>
+                @*<div class="row">
+                    <div class="col-md-4 col-sm-12 mb-3">
+                        <img src="~/images/hinhanh1.jpg" style="width: inherit" />
+                    </div>
+                    <div class="col-md-4 col-sm-12 mb-3">
+                        <img src="~/images/hinhanh2.jpg" style="width: inherit" />
+                    </div>
+                    <div class="col-md-4 col-sm-12 mb-3">
+                        <img src="~/images/hinhanh3.jpg" style="width: inherit" />
+                    </div>
+                </div>*@
+            </div>
+        </div>
+        <!-- //services-->
+        <!-- stats -->
+        <section class="agile_stats text-center py-5">
+            <div class="container pt-sm-5">
+                <div class="stats_agile mb-sm-5 mb-3">
+                    <h3 class="stat-title text-capitalize pb-md-5 pb-4">Tại sao nên lựa chọn chúng tôi?</h3>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-12">
+                        <div class="counter pt-5 px-3 pb-3 mb-5">
+                            <i class="fa fa-shipping-fast fa-2x"></i>
+                            <h3 class="count-text text-capitalize" style="color: white">Tiện lợi</h3>
+                            <p style="color: white">
+                                Nhận giặt là online thông qua đăng ký tại website, hotline… Nhận đồ và trả đồ nhanh chóng, thanh toán bằng nhiều hình thức: tiền mặt, chuyển khoản, trả trước qua gói giặt là tháng
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+                        <div class="counter pt-5 px-3 pb-3 mb-5">
+                            <i class="far fa-money-bill-alt fa-2x"></i>
+                            <h3 class="count-text text-capitalize" style="color: white">Tiết kiệm</h3>
+                            <p style="color: white">
+                                Bạn không cần đầu tư máy giặt–sấy, chi phí cho nước giặt, xả, bỏ công sức giặt - phơi - là - gấp quần áo mà vẫn luôn có quần áo sạch để mặc hàng ngày đồng thời có thêm nhiều thời gian hơn cho gia đình, công việc, tiết kiệm điện nước
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+                        <div class="counter pt-5 px-3 pb-3 mb-5">
+                            <i class="far fa-smile fa-2x"></i>
+                            <h3 class="count-text text-capitalize" style="color: white">Yên tâm</h3>
+                            <p style="color: white">
+                                Đồ được kiểm tra, phân loại, đánh dấu kỹ càng tránh thất lạc. Đồ tới tay bạn luôn đảm bảo sạch sẽ, thơm tho giúp bạn luôn cảm thấy tự tin bên người thân và mọi người xung quanh
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- //stats -->
+        <!-- team -->
+        <!--<section class="wthree-row py-5" id="team">
+        <div class="container py-md-5 py-3">
+            <div class="py-md-5 py-3 bg-pricemain text-center">
+                <h3 class="w3ls-title text-center text-capitalize pb-md-5 pb-4">Gặp gỡ đội ngũ phát triển</h3>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-sm-6 team-grids">
+                    <div class="team-effect">
+                        <img src="~/images/t1.jpg" alt="img" class="img-responsive">
+                    </div>
+                    <div class="footerv2-w3ls mt-3">
+                        <h4>John Smith</h4>
+                        <p>Creative Director</p>
+                        <ul class="social-iconsv2 agileinfo">
+                            <li>
+                                <a href="#">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fab fa-google-plus-g"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 team-grids mt-sm-0 mt-5">
+                    <div class="team-effect">
+                        <img src="~/images/t3.jpg" alt="img" class="img-responsive">
+                    </div>
+                    <div class="footerv2-w3ls mt-3">
+                        <h4>Thomson Doe</h4>
+                        <p>Chairman</p>
+                        <ul class="social-iconsv2 agileinfo">
+                            <li>
+                                <a href="#">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fab fa-google-plus-g"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 team-grids mt-lg-0 mt-5">
+                    <div class="team-effect">
+                        <img src="~/images/t2.jpg" alt="img" class="img-responsive">
+                    </div>
+                    <div class="footerv2-w3ls mt-3">
+                        <h4>Smith Kevin</h4>
+                        <p>Executive Manager</p>
+                        <ul class="social-iconsv2 agileinfo">
+                            <li>
+                                <a href="#">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fab fa-google-plus-g"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 team-grids mt-lg-0 mt-5">
+                    <div class="team-effect">
+                        <img src="~/images/t4.jpg" alt="img" class="img-responsive">
+                    </div>
+                    <div class="footerv2-w3ls mt-3">
+                        <h4>Laura Hill</h4>
+                        <p>HR Manager</p>
+                        <ul class="social-iconsv2 agileinfo">
+                            <li>
+                                <a href="#">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fab fa-google-plus-g"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>-->
+        <!-- //team -->
+        <!-- gallery -->
+        @*<div class="gallery  py-md-5 py-3" id="gallery">
+            <div class="container">
+                <h3 class="w3ls-title text-center text-capitalize py-md-4 py-3">Hình ảnh</h3>
+                <div class="gallery_gds row pt-md-5 pt-3">
+                    <div class="col-4 gal-w3l">
+                        <div class="agileits-img">
+                            <a href="~/images/g1.jpg" class="swipebox" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus tortor diam, ac lobortis justo rutrum quis. Praesent non purus fermentum, eleifend velit non">
+                                <img class="img-responsive img-style row2" src="~/images/g1.jpg" alt="" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-4  gal-w3l">
+                        <div class="agileits-img">
+                            <a href="~/images/g2.jpg" class="swipebox" title="Duis maximus tortor diam, ac lobortis justo rutrum quis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non purus fermentum, eleifend velit non">
+                                <img src="~/images/g2.jpg" alt="" class="img-responsive img-style row2" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-4  gal-w3l">
+                        <div class="agileits-img">
+                            <a href="~/images/g3.jpg" class="swipebox" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus tortor diam, ac lobortis justo rutrum quis. Praesent non purus fermentum, eleifend velit non">
+                                <img src="~/images/g3.jpg" alt="" class="img-responsive img-style row2" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery_gds row">
+                    <div class="col-4  gal-w3l">
+                        <div class="agileits-img">
+                            <a href="~/images/g4.jpg" class="swipebox" title="Praesent non purus fermentum, eleifend velit non Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus tortor diam, ac lobortis justo rutrum quis.">
+                                <img src="~/images/g4.jpg" alt="" class="img-responsive img-style row2" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-4  gal-w3l">
+                        <div class="agileits-img">
+                            <a href="~/images/g5.jpg" class="swipebox" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus tortor diam, ac lobortis justo rutrum quis. Praesent non purus fermentum, eleifend velit non">
+                                <img src="~/images/g5.jpg" alt="" class="img-responsive img-style row2" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-4  gal-w3l">
+                        <div class="agileits-img">
+                            <a href="~/images/g6.jpg" class="swipebox" title="Duis maximus tortor diam, ac lobortis justo rutrum quis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non purus fermentum, eleifend velit non">
+                                <img src="~/images/g6.jpg" alt="" class="img-responsive img-style row2" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row pb-md-5 pb-3">
+                    <div class="col-4  gal-w3l">
+                        <div class="agileits-img">
+                            <a href="~/images/g7.jpg" class="swipebox" title="Praesent non purus fermentum, eleifend velit non Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus tortor diam, ac lobortis justo rutrum quis.">
+                                <img src="~/images/g7.jpg" alt="" class="img-responsive img-style row2" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-4  gal-w3l">
+                        <div class="agileits-img">
+                            <a href="~/images/g8.jpg" class="swipebox" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus tortor diam, ac lobortis justo rutrum quis. Praesent non purus fermentum, eleifend velit non">
+                                <img src="~/images/g8.jpg" alt="" class="img-responsive img-style row2" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-4  gal-w3l">
+                        <div class="agileits-img">
+                            <a href="~/images/g9.jpg" class="swipebox" title="Duis maximus tortor diam, ac lobortis justo rutrum quis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non purus fermentum, eleifend velit non">
+                                <img src="~/images/g9.jpg" alt="" class="img-responsive img-style row2" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+        <!-- //gallery -->
+        <!-- pricing -->
+        <!--<section class="wthree-row py-md-5 pt-sm-5" id="pricing">
+        <div class="container py-md-5 py-3">
+            <h3 class="w3ls-title text-center text-capitalize pb-md-5 pb-4">Tiết kiệm hơn với gói giặt</h3>
+            <div class="row pb-5">
+                <div class="col-lg-3 col-md-6 text-center  pb-0 pt-3 px-3 agile-pricegrid">
+                    <div class="bg-price py-sm-3 rounded-top text-center">
+                        <h4>Basic</h4>
+                        <span class="mx-auto my-2"></span>
+                    </div>
+                    <div class="p-3">
+                        <h5 class="pt-2">
+                            <sup>$</sup>39
+                        </h5>
+                        <span>per month</span>
+                    </div>
+                    <ul class="list-group-flush">
+                        <li class="list-group-item">Cras justo odio</li>
+                        <li class="list-group-item">Dapibus ac facilisis in</li>
+                        <li class="list-group-item">Morbi leo risus</li>
+                        <li class="list-group-item">Cras justo odio</li>
+                        <li class="list-group-item">Porta ac consectetur ac</li>
+                    </ul>
+                    <div class="py-3 px-2">
+                        <button type="button" class="btn btn-info btn-lg btn-block text-md-center" data-toggle="modal" aria-pressed="false" data-target="#exampleModal">Get Started</button>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center pb-0 pt-3 px-3 agile-pricegrid">
+                    <div class="bg-price py-sm-3 rounded-top text-center">
+                        <h4>Regular</h4>
+                        <span class="mx-auto my-2"></span>
+                    </div>
+                    <div class="p-3">
+                        <h5 class="pt-2">
+                            <sup>$</sup>69
+                        </h5>
+                        <span>per month</span>
+                    </div>
+                    <ul class="list-group-flush">
+                        <li class="list-group-item">Cras justo odio</li>
+                        <li class="list-group-item">Dapibus ac facilisis in</li>
+                        <li class="list-group-item">Morbi leo risus</li>
+                        <li class="list-group-item">Cras justo odio</li>
+                        <li class="list-group-item">Porta ac consectetur ac</li>
+                    </ul>
+                    <div class="py-3 px-2">
+                        <button type="button" class="btn btn-info btn-lg btn-block" data-toggle="modal" aria-pressed="false" data-target="#exampleModal">Get Started</button>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center p-3  agile-pricegrid">
+                    <div class="bg-price py-sm-3 rounded-top text-center">
+                        <h4>Mega</h4>
+                        <span class="mx-auto my-2"></span>
+                    </div>
+                    <div class="p-3">
+                        <h5 class="pt-2">
+                            <sup>$</sup>99
+                        </h5>
+                        <span>per month</span>
+                    </div>
+                    <ul class="list-group-flush">
+                        <li class="list-group-item">Cras justo odio</li>
+                        <li class="list-group-item">Dapibus ac facilisis in</li>
+                        <li class="list-group-item">Morbi leo risus</li>
+                        <li class="list-group-item">Cras justo odio</li>
+                        <li class="list-group-item">Porta ac consectetur ac</li>
+                    </ul>
+                    <div class="py-3 px-2">
+                        <button type="button" class="btn btn-info btn-lg btn-block" data-toggle="modal" aria-pressed="false" data-target="#exampleModal">Get Started</button>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center pb-0 pt-3 px-3 agile-pricegrid">
+                    <div class="bg-price py-sm-3 rounded-top text-center">
+                        <h4>Combo</h4>
+                        <span class="mx-auto my-2"></span>
+                    </div>
+                    <div class="p-3">
+                        <h5 class="pt-2">
+                            <sup>$</sup>199
+                        </h5>
+                        <span>per month</span>
+                    </div>
+                    <ul class="list-group-flush">
+                        <li class="list-group-item">Cras justo odio</li>
+                        <li class="list-group-item">Dapibus ac facilisis in</li>
+                        <li class="list-group-item">Morbi leo risus</li>
+                        <li class="list-group-item">Cras justo odio</li>
+                        <li class="list-group-item">Porta ac consectetur ac</li>
+                    </ul>
+                    <div class="py-3 px-2">
+                        <button type="button" class="btn btn-info btn-lg btn-block" data-toggle="modal" aria-pressed="false" data-target="#exampleModal">Get Started</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>-->
+        <!-- //pricing -->
+        <!-- slide -->
+        <section class="wthree-row py-sm-5 py-3"  style="background: url(../images/about.jpg) no-repeat center center;">  @*slide-bg bg-dark">*@
+            <div class="px-md-5 px-3 py-md-5 py-3 row no-wrap">
+                <div class="py-lg-6 bg-pricemain col-md-8 col-sm-12">
+                    <h3 class="agile-title text-capitalize" style="color: #3E9097">Hãy đến với chúng tôi!</h3>
+                    <span class="w3-line"></span>
+                    <h5 class="agile-title text-capitalize pt-4" style="color: #3E9097">GIẶT LÀ HP</h5>
+                    <p class="py-sm-4 py-2">
+                        Được thành lập từ năm 2017, trải qua 3 năm kinh nghiệm trong lĩnh vực giặt là cùng đội ngũ nhân viên chuyên nghiệp - trách nhiệm - năng động, hệ thống GIẶT LÀ HP tự tin khẳng định và cam kết sẽ đem tới cho khách hàng sự hài lòng tuyệt đối
+                    </p>
+                    <p class="py-sm-4 py-2">
+                        GIẶT LÀ HP làm việc với mục tiêu không ngừng nỗ lực và phát triển, luôn cập nhật những công nghệ, phương pháp mới nhất, đi cùng với đó là đảm bảo thực hiện những quy tắc về an toàn môi trường. Khách hàng sẽ cảm nhận được giá trị tốt nhất, sự tận tâm của chúng tôi chỉ ngay trong lần đầu tiên sử dụng dịch vụ
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!--//slide-->
+        <!-- contact -->
+        @*<section class="wthree-row py-5 w3-contact" id="contact">
+            <div class="container py-md-5">
+                <h3 class="w3ls-title text-center text-capitalize pb-md-5 pb-4">Liên hệ - góp ý</h3>
+                <div class="row contact-form py-3">
+                    <div class="col-lg-6 wthree-form-left" style="margin-top:-16px">
+                        <div class="contact-top1">
+                            <form action="/home/themlienhe" method="post" class="f-color">
+                                <div class="form-group">
+                                    <label for="contactusername">Họ tên</label>
+                                    <input type="text" class="form-control" name="tennguoidung" placeholder="Họ và tên" id="contactusername" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contactemail">Số điện thoại</label>
+                                    <input type="number" class="form-control" name="sodienthoai" placeholder="Số điện thoại" id="contactemail" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contactcomment">Lời nhắn</label>
+                                    <textarea class="form-control" rows="5" placeholder="Lời đóng góp ý kiến cho chúng tôi" name="noidung" id="contactcomment" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-info btn-block">Gửi</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-6  mt-lg-0 mt-5 map contact-right" style="padding-top:16px">
+                        <iframe class="h-50" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=102%20A1%2C%20ph%E1%BB%91%208%2F3+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed"
+                                allowfullscreen></iframe>
+                        <div class="address mt-3">
+                            <h5 class="pb-3 text-capitalize">Thông tin liên hệ</h5>
+                            <address>
+                                <ul>
+                                    <li>
+                                        <i class="fa fa-map-marker-alt"></i>  102 - A1, phố 8/3, Quỳnh Mai, Hai Bà Trưng, Hà Nội -
+                                        <i class="fa fa-phone"></i><a href="tel:090414625">  090 414 625</a>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-map-marker-alt"></i>  Ngõ 1, đường Đình, An Phú, Trâu Quỳ, Gia Lâm, Hà Nội -
+                                        <i class="fa fa-phone"></i><a href="tel:0845971859">  084 5971 859</a>
+                                    </li>
+                                    <li><i class="fa fa-envelope"></i>  giatlahienphong@gmail.com</li>
+                                    <li><i class="fa fa-clock"></i>  Thứ 2 - Chủ Nhật : 7:00am - 9:00pm</li>
+                                </ul>
+                            </address>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>*@
+        <!-- //contact -->
+        <!-- testimonials -->
+        <section class="wthree-row py-5 slide-bg bg-dark" id="testimonials">  @*testi-agile*@ 
+            <div class="container py-md-5 py-3">
+                <h3 class="w3ls-title text-center text-capitalize pb-md-5 pb-4" style="color: white">Cảm nhận khách hàng</h3>
+                <div class="w3_testimonials_grids w3_testimonials_grids">
+                    <div class="sreen-gallery-cursual">
+                        <div id="owl-demo" class="owl-carouselpb-5">
+                            <div class="item-owl text-center">
+                                <div class="img-agile">
+                                    <i class="fas fa-user" style="color: white"></i>
+                                    <h6 class="mt-3 text-white">Chị Lan Anh (Nội trợ)</h6>
+                                </div>
+                                <div class="test-review test-tooltip1">
+                                    <p class="mx-auto mt-3 text-white">
+                                        <i class="fa fa-quote-left" aria-hidden="true"></i>
+                                        Chất lượng chuẩn với giá bình dân, nhân viên nhiệt tình. Quần áo luôn thơm tho, sạch sẽ, là lượt phẳng phiu. Chắc chắn tôi sẽ quay lại.
+                                        <i class="fa fa-quote-right" aria-hidden="true"></i>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="item-owl">
+                                <div class="img-agile">
+                                    <i class="fas fa-user" style="color: white"></i>
+                                    <h6 class="mt-3 text-white">Anh Toàn (Nhân viên văn phòng)</h6>
+                                </div>
+                                <div class="test-review test-tooltip1">
+                                    <p class="mx-auto mt-3 text-white">
+                                        <i class="fa fa-quote-left" aria-hidden="true"></i>
+                                        Tôi vô cùng hài lòng với GIẶT LÀ HP. Từ khi biết tới GIẶT LÀ HP, tôi đã có thể dành nhiều thời gian cho công việc của mình hơn. Chúc hệ thống ngày càng phát triển hơn nữa!
+                                        <i class="fa fa-quote-right" aria-hidden="true"></i>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="item-owl">
+                                <div class="img-agile">
+                                    <i class="fas fa-user" style="color: white"></i>
+                                    <h6 class="mt-3 text-white">Chị My (Giám đốc): </h6>
+                                </div>
+                                <div class="test-review test-tooltip1">
+                                    <p class="mx-auto mt-3 text-white">
+                                        <i class="fa fa-quote-left" aria-hidden="true"></i>
+                                        Bởi tính chất công việc bận rộn, đối với tôi giặt giũ là một việc rất vất vả và tốn thời gian. Nhưng nhờ có GIẶT LÀ HP, tôi như “trút được gánh nặng”. Nhân viên rất đúng hẹn và lịch sự. Tôi hoàn toàn yên tâm!
+                                        <i class="fa fa-quote-right" aria-hidden="true"></i>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- //testimonials -->
+    </div>
+

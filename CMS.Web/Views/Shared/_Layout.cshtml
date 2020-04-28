@@ -1,0 +1,422 @@
+﻿<!DOCTYPE HTML>
+<html lang="zxx">
+
+<head>
+    <title>Xưởng Giặt Là HP | Tận tâm - Chất lượng - Giá cả hợp lý</title>
+    <meta property="fb:app_id" content="1481949185307252" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Go Laundry Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script>
+        addEventListener("load", function () {
+            setTimeout(null, 1000);
+        }, false);
+
+        //function hideURLbar() {
+        //    window.scrollTo(0, 1);
+        //}
+    </script>
+    <style>
+
+        #loader {
+            border: 12px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 12px solid #444444;
+            width: 70px;
+            height: 70px;
+            animation: spin 1s linear infinite;
+            z-index: 999
+        }
+
+        @@keyframes spin {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .center {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+    </style>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="~/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <!-- gallery css -->
+    <link rel="stylesheet" href="~/css/swipebox.css">
+    <!-- Custom CSS -->
+    <link href="~/css/style.css" rel='stylesheet' type='text/css' />
+    <!-- font-awesome icons -->
+    <link href="~/css/fontawesome-all.min.css" rel="stylesheet">
+    <!-- //Custom Theme files -->
+    <!--webfonts-->
+    <link href="//fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+    <!--//webfonts-->
+</head>
+
+<body>
+    
+    <!-- header -->
+    <header>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light" style="place-content: center">
+
+                <div>
+                    <a class="navbar-brand" href="/">
+                        <img src="~/images/LOGO HP NEW-01.png" style="width: 100px" />
+                    </a>
+                    <button class="navbar-toggler ml-md-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation"
+                            style="position: absolute; right: 0; top: 50px; background-color: #3E9093">
+                        <span class="fas fa-list-ul" style="color: white"></span>
+                    </button>
+                </div>
+                <div>
+                    <p style="margin-bottom: 5px; text-align: center;
+                            font-family: serif;
+                            font-size: 18px; color: #3E9097;
+                            font-weight: 600">
+                        GIẶT LÀ HP
+                    </p>
+                    <p style="text-align: center;
+                          font-style: italic;
+                          margin-bottom: 0px;
+                          font-weight: bold;
+                          font-size: 12px;">
+                        <i class="fas fa-map-marker-alt"></i> Phố 8/3, Quỳnh Mai, HBT, HN - <a href="tel:0845971859">084.5971.859</a>
+                    </p>
+                    <p style="text-align: center;
+                          font-style: italic;
+                          margin-bottom: 0px;
+                          font-weight: bold;
+                          font-size: 12px;">
+                        <i class="fas fa-map-marker-alt"></i> Trâu Quỳ, Gia Lâm, Hà Nội - <a href="tel:0886300633">088.6300.633</a>
+                    </p>
+                </div>
+
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto text-center">
+                        <li class="nav-item active  mr-3">
+                            <a class="nav-link" href="/Home/Index">
+                                Trang chủ
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item  mr-3">
+                            <a class="nav-link" href="/Home/BangGia">Bảng giá</a>
+                        </li>
+                        <li class="nav-item dropdown mr-3">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                               aria-expanded="false">
+                                Thông tin
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/#about">Chất lượng</a>
+                                <a class="dropdown-item" href="/#services">Dịch vụ</a>
+                                @*<a class="dropdown-item scroll" href="/#team">Đội ngũ</a>*@
+                                <a class="dropdown-item" href="/#gallery">Hình ảnh</a>
+                                @*<div class="dropdown-divider"></div>*@
+                                @*<a class="dropdown-item scroll" href="#pricing">Gói giặt</a>*@
+                                <a class="dropdown-item" href="/#testimonials">Feedback</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Home/LienHe">Liên hệ</a>
+                        </li>
+                    </ul>
+                    <button type="button" class="btn btn-info btn-lg-block w3ls-btn px-4 text-uppercase font-weight-bold" data-toggle="modal"
+                            aria-pressed="false" data-target="#exampleModalDangKy">
+                        Đăng ký thành viên
+                    </button>
+
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- //header -->
+    @RenderBody()
+    <!-- footer -->
+    <footer class="py-md-5 pt-5 pb-4" style="background-color: #f0f9f6">
+        <div class="container">
+            <!-- footer grid top -->
+            <div class="footerv2-w3ls text-center">
+                <h4 class="w3ls-title text-capitalize pb-1">Công ty TNHH Thương mại & Dịch vụ gia đình Hiền Phong</h4>
+                <h4 class="w3ls-title text-capitalize pb-3"> TẬN TÂM - UY TÍN - CHẤT LƯỢNG </h4>
+                <ul class="social-iconsv2 agileinfo mt-3">
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-google-plus-g"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="fv3-contact  mt-3" ">
+
+                    <p>
+                        <span class="fas fa-map-marker-alt mr-2"></span>
+                        102 - A1, phố 8/3, Quỳnh Mai, Hai Bà Trưng, Hà Nội. - <span class="fas fa-phone-volume mr-2"></span>
+                        <a href="tel:0845971859">084 5971 859</a>
+                    </p>
+
+                </div>
+                <div class="fv3-contact">
+
+                    <p>
+                        <span class="fas fa-map-marker-alt mr-2"></span>
+                        Ngõ 1, đường Đình, An Phú, Trâu Quỳ, Gia Lâm, Hà Nội. - <span class="fas fa-phone-volume mr-2"></span>
+                        <a href="tel:0886300633">088 6300 633</a>
+                    </p>
+
+                </div>
+                <div class="fv3-contact">
+                    <span class="fas fa-clock mr-2"></span>
+                    <p>Thứ 2 - Chủ nhật : 7:30 - 21:00</p>
+                </div>
+
+            </div>
+            <!-- copyright -->
+            <div class="cpy-right text-center pt-5">
+                <p>
+                    © 2020 GIẶT LÀ HP | Bản quyền thực hiện bởi Core Value
+                </p>
+            </div>
+            <!-- //copyright -->
+        </div>
+    </footer>
+    <!--<button type="button" class="btn btn-primary" style="position: fixed;left: 35px; bottom: 35px;border-radius: 50px;">
+        Đăng ký thành viên
+    </button>-->
+    <button type="button" class="btn btn-info" data-toggle="modal" style="position: fixed;left: 24px; bottom: 24px; margin: 0px; z-index: 10;border-radius: 50px; width: 90px; height: 90px; font-size: 18px; white-space: inherit"
+            aria-pressed="false" data-target="#exampleModal">
+        Đặt lịch ngay
+    </button>
+    <!-- //footer -->
+    <!-- order modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-capitalize" id="exampleModalLabel1">Đặt lịch</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="/Home/DatLich" method="post" class="p-3">
+                        <div class="form-group">
+                            <label for="recipient-name2" class="col-form-label">Số điện thoại</label>
+                            <input type="number" class="form-control" name="sodienthoai" aria-required="true" aria-invalid="false" required placeholder="Nhập số điện thoại..." id="recipient-name2">
+                        </div>
+                        <div class="form-group">
+                            <label class="mr-2 col-form-label">Ngày lấy đồ</label>
+                            <input id="datepicker1" type="date" name="ngaydat" aria-required="true" aria-invalid="false" required placeholder="Nhập ngày lấy..." class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label class="mr-2 col-form-label">Giờ lấy đồ</label>
+                            <span>
+                                <select name="giodat" class="form-control" aria-invalid="false">
+                                    <option value="1">7h30 - 9h</option>
+                                    <option value="2">18h - 20h30</option>
+                                </select>
+                            </span>
+                        </div>
+                        @*<p style="font-size: 14px; margin-bottom: 0px; font-weight: 400; color: black">
+                                Đăng ký thành viên ngay <a href="#exampleModalDangKy" style="color: rgb(69, 127, 119); "><u><b>Tại đây</b></u></a>
+                                để nhận thêm nhiều ưu đãi!
+                            </p>*@
+                        <div class="right-w3l" style="padding-top: 30px">
+                            <input type="submit" class="form-control" style="background-color: #3E9097" value="Đặt lịch ngay">
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModalDangKy" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-capitalize" id="exampleModalLabel2">Đăng ký thành viên</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="/Home/DangKy" method="post" class="p-3">
+                        <div class="form-group">
+                            <label for="name" class="col-form-label">Họ và tên</label>
+                            <input type="text" class="form-control" name="tenkhachhang" value="" required placeholder="Lương Tuấn Minh" id="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="diachi" class="col-form-label">Địa chỉ</label>
+                            <input type="text" class="form-control" name="diachi" value="" required placeholder="Tầng 6, tòa A, chung cư B, Hai Bà Trưng" id="diachi">
+                        </div>
+                        <div class="form-group">
+                            <label for="sdt" class="col-form-label">Số điện thoại</label>
+                            <input type="number" class="form-control" name="sodienthoai" value="" required placeholder="0354354654" id="sdt">
+
+                            <label for="sdt2" class="col-form-label">Số khác</label>
+                            <input type="number" class="form-control" name="sodienthoaikhac" value="" placeholder="Số khác" id="sdt2">
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="col-form-label">Email</label>
+                            <input type="text" class="form-control" name="email" value="" placeholder="youremail@gmai.com" id="email">
+                        </div>
+                        <div class="right-w3l">
+                            <input type="submit" class="form-control" style="background-color: #3E9097" value="Đăng ký">
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //order modal -->
+    <!-- js-->
+    <script>
+        $(document).ready(function () {
+
+            $('.ab').click(function (e) {
+                e.preventDefault();
+                scrollToElement('#about', 1000);
+            });
+        })
+    </script>
+    <script src="~/js/jquery-2.2.3.min.js"></script>
+    <!-- js-->
+    <!-- Banner text Responsiveslides -->
+    <script src="~/js/responsiveslides.min.js"></script>
+    <script>
+        // You can also use "$(window).load(function() {"
+        $(function () {
+            // Slideshow 4
+            $("#slider3").responsiveSlides({
+                auto: true,
+                pager: true,
+                nav: false,
+                speed: 500,
+                namespace: "callbacks",
+                before: function () {
+                    $('.events').append("<li>before event fired.</li>");
+                },
+                after: function () {
+                    $('.events').append("<li>after event fired.</li>");
+                }
+            });
+
+        });
+    </script>
+    <!-- //Banner text  Responsiveslides -->
+    <!-- start-smooth-scrolling -->
+    <script src="~/js/move-top.js "></script>
+    <script src="~/js/easing.js "></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            $(".scroll ").click(function (event) {
+                event.preventDefault();
+
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 1000);
+            });
+        });
+    </script>
+    <!-- //end-smooth-scrolling -->
+    <!-- smooth-scrolling-of-move-up -->
+    <script>
+        $(document).ready(function () {
+            /*
+             var defaults = {
+                 containerID: 'toTop', // fading element id
+                 containerHoverID: 'toTopHover', // fading element hover id
+                 scrollSpeed: 1200,
+                 easingType: 'linear'
+             };
+             */
+
+            $().UItoTop({
+                easingType: 'easeOutQuart'
+            });
+
+        });
+    </script>
+    <script src="~/js/SmoothScroll.min.js "></script>
+    <!-- //smooth-scrolling-of-move-up -->
+    <!-- gallery swipebox -->
+    <script src="~/js/jquery.swipebox.min.js"></script>
+    <script>
+        jQuery(function ($) {
+            $(".swipebox").swipebox();
+        });
+    </script>
+    <script src="~/js/jquery.adipoli.min.js"></script>
+    <!-- effect -->
+    <script>
+        $(function () {
+            $('.row2').adipoli({
+                'startEffect': 'overlay',
+                'hoverEffect': 'sliceDown'
+            });
+        });
+    </script>
+    <!-- //swipe box js -->
+    <!-- stats counter -->
+    <script src="~/js/counter.js"></script>
+    <!-- Date picker -->
+    <link rel="stylesheet" href="~/css/jquery-ui.css" />
+    <script src="~/js/jquery-ui.js"></script>
+    <script>
+        document.getElementById("datepicker1").valueAsDate = new Date();
+
+    </script>
+    <!-- // Date picker -->
+    <!-- testimonials -->
+    <link href="~/css/owl.carousel.css" rel="stylesheet">
+    <script src="~/js/owl.carousel.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#owl-demo").owlCarousel({
+                items: 1,
+                lazyLoad: true,
+                autoPlay: false,
+                navigation: true,
+                navigationText: true,
+                pagination: true,
+            });
+        });
+    </script>
+    <!-- //for testimonials slider-js-script-->
+    <!-- Bootstrap Core JavaScript -->
+    <script src="~/js/bootstrap.js ">
+    </script>
+    <!-- //Bootstrap Core JavaScript -->
+
+
+
+</body>
+
+</html>
