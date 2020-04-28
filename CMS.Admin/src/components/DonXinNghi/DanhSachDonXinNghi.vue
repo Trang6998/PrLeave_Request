@@ -24,11 +24,11 @@
                                       class="table-border table">
                             <template slot="items" slot-scope="props">
                                 <td class="text-xs-center">{{ props.index + 1 }}</td>
-                                <td class="text-xs-center">{{ props.item.User_Leave.Name }}</td>
+                                <td class="text-xs-center">{{ props.item.User_Leave.UserName }}</td>
                                 <td class="text-xs-center">{{ props.item.TimeStart | moment("DD/MM/YYYY") }}</td>
                                 <td class="text-xs-center">{{ props.item.TimeStart | moment("hh:mm") }} - {{ props.item.TimeEnd | moment("hh:mm") }}</td>
                                 <td class="text-xs-center">{{ props.item.Reason }}</td>
-                                <td class="text-xs-center">{{ props.item.User_Approve.Name }}</td>
+                                <td class="text-xs-center">{{ props.item.User_Approve.UserName }}</td>
                                 <td class="text-xs-center">
                                     <span v-if="laNguoiPheDuyet == true">
                                         <v-btn flat icon small @click="duyetDon(props.item)" class="ma-0">
@@ -115,6 +115,7 @@
                 (this.$refs.themSuaDonXinNghi as any).show(isUpdate, item);
             },
             duyetDon(item: any) {
+                item.User_ApproveID = this.$store.state.user.Profile.UserId
                 Leave_RequestApi.update(item.Id, item).then(res => {
                     this.$snotify.success('Duyệt đơn thành công!');
                 }).catch(res => {
