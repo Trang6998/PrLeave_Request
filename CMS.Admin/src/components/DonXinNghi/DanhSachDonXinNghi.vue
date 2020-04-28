@@ -25,11 +25,10 @@
                             <template slot="items" slot-scope="props">
                                 <td class="text-xs-center">{{ props.index + 1 }}</td>
                                 <td class="text-xs-center">{{ props.item.User_Leave.Name }}</td>
-                                <td class="text-xs-center">{{ props.item.TimeStart | monent("DD/MM/YYYY") }}</td>
-                                <td class="text-xs-center">{{ props.item.TimeStart | monent("hh:mm") }} - {{ props.item.TimeEnd | monent("hh:mm") }}</td>
+                                <td class="text-xs-center">{{ props.item.TimeStart | moment("DD/MM/YYYY") }}</td>
+                                <td class="text-xs-center">{{ props.item.TimeStart | moment("hh:mm") }} - {{ props.item.TimeEnd | moment("hh:mm") }}</td>
                                 <td class="text-xs-center">{{ props.item.Reason }}</td>
                                 <td class="text-xs-center">{{ props.item.User_Approve.Name }}</td>
-                                <td class="text-xs-center"></td>
                                 <td class="text-xs-center">
                                     <span v-if="laNguoiPheDuyet == true">
                                         <v-btn flat icon small @click="duyetDon(props.item)" class="ma-0">

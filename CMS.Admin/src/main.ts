@@ -18,10 +18,6 @@ require('moment/locale/vi');
 Vue.use(require('vue-moment'), {
     moment
 });
-import VueGoogleCharts from 'vue-google-charts'
- 
-Vue.use(VueGoogleCharts) 
-
 Vue.use(EventBus);
 Vue.use(CommonFunctions);
 Vue.use(VeeValidate);

@@ -1,14 +1,14 @@
+
 <template>
-    <v-flex xs12>
-        <v-breadcrumbs divider="/" class="pa-0">
-            <v-icon slot="divider">chevron_right</v-icon>
-            <v-breadcrumbs-item>
-                <v-btn flat class="ma-0" @click="$router.go(-1)" small><v-icon>arrow_back</v-icon> Quay lại</v-btn>
-            </v-breadcrumbs-item>
-            <v-breadcrumbs-item to="/danhmucsanpham" exact>Danh mục sản phẩm</v-breadcrumbs-item>
-            <v-breadcrumbs-item>{{isUpdate?'Cập nhật':'Thêm mới'}}</v-breadcrumbs-item>
-        </v-breadcrumbs>
+    <v-dialog v-model="isShow" width="800" scrollable persistent>
         <v-card>
+            <v-card-title class="teal lighten-2 white--text pa-2">
+                <span class="title">{{ isUpdate? 'Cập nhập đơn xin nghỉ' : 'Thêm mới đơn xin nghỉ' }}</span>
+                <v-spacer></v-spacer>
+                <v-btn class="white--text ma-0" small icon @click="hide">
+                    <v-icon>close</v-icon>
+                </v-btn>
+            </v-card-title>
             <v-card-text>
                 <v-form scope="frmAddEdit">
                     <v-layout row wrap>
@@ -42,7 +42,7 @@
                                         v-validate="''"
                                         data-vv-scope="frmAddEdit"
                                         clearable
-                                        data-vv-name="Lý do"><Lý dov-textarea>
+                                        data-vv-name="Lý do"></v-textarea>
                         </v-flex>
 
                     </v-layout>
@@ -50,12 +50,13 @@
             </v-card-text>
             <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn class="primary" :disabled="loading" :loading="loading" @click.native="save">{{isUpdate?'Cập nhật':'Thêm mới'}}</v-btn>
+                <v-btn text @click.native="hide">Hủy</v-btn>
+                <v-btn text @click.native="save" color="teal lighten-2"
+                       :loading="loadingSave">Lưu</v-btn>
             </v-card-actions>
         </v-card>
-    </v-flex>
+    </v-dialog>
 </template>
-
 <script lang="ts">
     import { Vue } from 'vue-property-decorator';
     import VChooseFile from '@/components/Commons/VChooseFile.vue';
