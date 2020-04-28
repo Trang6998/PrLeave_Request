@@ -1,28 +1,28 @@
 
 <template>
-    <v-dialog v-model="isShow" width="800" scrollable persistent>
+    <v-dialog v-model="isShow" width="600" scrollable persistent>
         <v-card>
             <v-card-title class="teal lighten-2 white--text pa-2">
                 <span class="title">{{ isUpdate? 'Cập nhập đơn xin nghỉ' : 'Thêm mới đơn xin nghỉ' }}</span>
                 <v-spacer></v-spacer>
-                <v-btn class="white--text ma-0" small icon @click="hide">
+                <v-btn class="white--text ma-0" small icon @click="hide()">
                     <v-icon>close</v-icon>
                 </v-btn>
             </v-card-title>
             <v-card-text>
                 <v-form scope="frmAddEdit">
                     <v-layout row wrap>
-                        <v-flex xs6 sm3 md3>
+                        <v-flex xs12 md6>
                             <v-datetimepicker v-model="leave_Request.TimeStart"
                                               label="Thời gian ra"
                                               :error-messages="errors.collect('Thời gian ra', ' frmAddEdit')"
-                                              v-validate="'required'"
+                                              v-validate="'required'" @input="updateTimeEnd()"
                                               data-vv-scope="frmAddEdit"
                                               data-vv-name="Thời gian vào"
                                               hide-details
                                               clearable></v-datetimepicker>
                         </v-flex>
-                        <v-flex xs6 sm3 md3>
+                        <v-flex xs12 md6>
                             <v-datetimepicker v-model="leave_Request.TimeEnd"
                                               label="Thời gian vào"
                                               :error-messages="errors.collect('Thời gian vào', ' frmAddEdit')"
@@ -50,7 +50,7 @@
             </v-card-text>
             <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn text @click.native="hide">Hủy</v-btn>
+                <v-btn text @click.native="hide()">Hủy</v-btn>
                 <v-btn text @click.native="save" color="teal lighten-2"
                        :loading="loadingSave">Lưu</v-btn>
             </v-card-actions>
@@ -79,6 +79,7 @@ import UsersApi from '../../apiResources/UsersApi';
                 editing: null as any,
                 search: null,
                 index: -1,
+                isShow: false
             }
         },
         watch: {
@@ -89,6 +90,21 @@ import UsersApi from '../../apiResources/UsersApi';
         computed: {
         },
         methods: {
+            updateTimeEnd() {
+                this.leave_Request.TimeEnd = this.$moment(this.leave_Request.TimeStart).add(15, 'minutes')
+
+            },
+            show(isUpdate: boolean, item: any) {
+                this.isShow = true;
+                this.isUpdate = isUpdate;
+                if (isUpdate) {
+                    this.leave_Request.Id = item.Id;
+                    this.getDataFromApi(this.leave_Request.Id);
+                }
+                else {
+                    this.leave_Request = {} as Leave_Request;
+                }
+            },
             getDataFromApi(id: number): void {
                 Leave_RequestApi.detail(id).then(res => {
                     this.leave_Request = res;
@@ -99,17 +115,21 @@ import UsersApi from '../../apiResources/UsersApi';
                     this.dsNhanVien = res.Data;
                 });
             },
+            hide() {
+                this.isShow = false
+            },
             save(): void {
                 this.$validator.validateAll('frmAddEdit').then((res) => {
                     if (res) {
                         this.leave_Request.User_Approve = undefined;
                         this.leave_Request.User_Leave = undefined;
-                        this.leave_Request.Id = this.$store.state.user.Profile.UserId
+                        this.leave_Request.User_LeaveID = this.$store.state.user.Profile.UserId
                         if (this.isUpdate) {
-                            let id = parseInt(this.$route.params.id, 10);
                             this.loading = true;
-                            Leave_RequestApi.update(id, this.leave_Request).then(res => {
+                            Leave_RequestApi.update(this.leave_Request.Id, this.leave_Request).then(res => {
                                 this.loading = false;
+                                this.isShow = false;
+                                this.$emit("save");
                                 this.$snotify.success('Cập nhật thành công!');
                             }).catch(res => {
                                 this.loading = false;
@@ -121,6 +141,8 @@ import UsersApi from '../../apiResources/UsersApi';
                                 this.leave_Request = res;
                                 this.isUpdate = true;
                                 this.loading = false;
+                                this.isShow = false;
+                                this.$emit("save");
                                 this.$snotify.success('Thêm mới thành công!');
                             }).catch(res => {
                                 this.loading = false;

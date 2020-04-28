@@ -11,7 +11,7 @@
             <v-card-text>
                 <v-layout row wrap>
                     <v-flex xs12 sm6 md3>
-                        <v-text-field label="Tìm kiếm..." v-model="searchParamsLeave_Request.q" @input="getDataFromApi" single-line hide-details></v-text-field>
+                        <v-text-field label="Tìm kiếm..." v-model="searchParamsLeave_Request.keywords" @input="getDataFromApi(searchParamsLeave_Request)" single-line hide-details></v-text-field>
                     </v-flex>
                     <v-spacer></v-spacer>
                     <v-btn color="info" @click="showModalAddEdit(false, {})" class="mt-3" small>Thêm mới</v-btn>
@@ -24,15 +24,15 @@
                                       class="table-border table">
                             <template slot="items" slot-scope="props">
                                 <td class="text-xs-center">{{ props.index + 1 }}</td>
-                                <td class="text-xs-center">{{ props.item.User_Leave.UserName }}</td>
+                                <td class="text-xs-center">{{ props.item.User_Leave ? props.item.User_Leave.UserName : "" }}</td>
                                 <td class="text-xs-center">{{ props.item.TimeStart | moment("DD/MM/YYYY") }}</td>
                                 <td class="text-xs-center">{{ props.item.TimeStart | moment("hh:mm") }} - {{ props.item.TimeEnd | moment("hh:mm") }}</td>
                                 <td class="text-xs-center">{{ props.item.Reason }}</td>
-                                <td class="text-xs-center">{{ props.item.User_Approve.UserName }}</td>
+                                <td class="text-xs-center">{{ props.item.User_Approve ? props.item.User_Approve.UserName : ""}}</td>
                                 <td class="text-xs-center">
                                     <span v-if="laNguoiPheDuyet == true">
-                                        <v-btn flat icon small @click="duyetDon(props.item)" class="ma-0">
-                                            <v-icon small>Duyệt</v-icon>
+                                        <v-btn flat small @click="duyetDon(props.item)" class="ma-0">
+                                            Duyệt
                                         </v-btn>
                                     </span>
                                     <span v-else>
@@ -82,7 +82,7 @@
             return {
                 dsLeave_Request: [] as Leave_Request[],
                 tableHeader: [
-                    { text: '#', value: 'TenDanhMuc', align: 'center', sortable: true },
+                    { text: '#', value: '#', align: 'center', sortable: true },
                     { text: 'Tên người xin nghỉ', value: 'ThuTu', align: 'center', sortable: true },
                     { text: 'Ngày xin nghỉ', value: 'HienThi', align: 'center', sortable: true },
                     { text: 'Thời gian', value: 'HienThi', align: 'center', sortable: true },
@@ -101,13 +101,13 @@
         watch: {
         },
         created() {
-            this.getDataFromApi();
+            this.getDataFromApi(this.searchParamsLeave_Request);
             if (this.$store.state.user.Profile.LoaiTaiKhoanID == 4) // admin
                 this.laNguoiPheDuyet = true
         },
         methods: {
-            getDataFromApi(): void {
-                Leave_RequestApi.search(this.searchParamsLeave_Request).then(res => {
+            getDataFromApi(searchParamsLeave_Request: Leave_RequestApiSearchParams): void {
+                Leave_RequestApi.search(searchParamsLeave_Request).then(res => {
                     this.dsLeave_Request = res.Data;
                 });
             },
@@ -116,7 +116,10 @@
             },
             duyetDon(item: any) {
                 item.User_ApproveID = this.$store.state.user.Profile.UserId
+                item.User_Approve = undefined;
+                item.User_Leave = undefined;
                 Leave_RequestApi.update(item.Id, item).then(res => {
+                    this.getDataFromApi(this.searchParamsLeave_Request)
                     this.$snotify.success('Duyệt đơn thành công!');
                 }).catch(res => {
                     this.$snotify.error('Duyệt đơn thất bại!');
@@ -129,7 +132,7 @@
             deleteLeave_Request(): void {
                 Leave_RequestApi.delete(this.selectedLeave_Request.Id).then(res => {
                     this.$snotify.success('Xóa thành công!');
-                    this.getDataFromApi();
+                    this.getDataFromApi(this.searchParamsLeave_Request);
                     this.dialogConfirmDelete = false;
                 }).catch(res => {
                     this.$snotify.error('Xóa thất bại!');

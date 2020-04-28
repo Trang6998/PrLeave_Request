@@ -3,6 +3,7 @@ import { BaseApi } from './BaseApi'
 import { PaginatedResponse, Pagination } from './PaginatedResponse'
 import { Leave_Request } from '../models/Leave_Request';
 export interface Leave_RequestApiSearchParams extends Pagination {
+    keywords? : string
 }
 class Leave_RequestApi extends BaseApi {
     search(searchParams: Leave_RequestApiSearchParams): Promise<PaginatedResponse<Leave_Request>> {
