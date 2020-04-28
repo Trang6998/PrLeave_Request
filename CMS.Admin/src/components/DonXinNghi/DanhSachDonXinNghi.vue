@@ -5,7 +5,7 @@
             <v-breadcrumbs-item>
                 <v-btn flat class="ma-0" @click="$router.go(-1)" small><v-icon>arrow_back</v-icon> Quay lại</v-btn>
             </v-breadcrumbs-item>
-            <v-breadcrumbs-item to="/danhmucsanpham" exact>Danh sách xin nghỉ</v-breadcrumbs-item>
+            <v-breadcrumbs-item to="/donxinnghi" exact>Danh sách xin nghỉ</v-breadcrumbs-item>
         </v-breadcrumbs>
         <v-card>
             <v-card-text>
@@ -26,8 +26,20 @@
                                 <td class="text-xs-center">{{ props.index + 1 }}</td>
                                 <td class="text-xs-center">{{ props.item.User_Leave.Name }}</td>
                                 <td class="text-xs-center">{{ props.item.TimeStart | monent("DD/MM/YYYY") }}</td>
-                                <td class="text-xs-center">{{ props.item.TimeStart | monent("hh:mm") }}</td>
-                                <td class="text-xs-center">{{ props.item.TimeEnd | monent("hh:mm") }}</td>
+                                <td class="text-xs-center">{{ props.item.TimeStart | monent("hh:mm") }} - {{ props.item.TimeEnd | monent("hh:mm") }}</td>
+                                <td class="text-xs-center">{{ props.item.Reason }}</td>
+                                <td class="text-xs-center">{{ props.item.User_Approve.Name }}</td>
+                                <td class="text-xs-center"></td>
+                                <td class="text-xs-center">
+                                    <span v-if="laNguoiPheDuyet == true">
+                                        <v-btn flat icon small @click="duyetDon(props.item)" class="ma-0">
+                                            <v-icon small>Duyệt</v-icon>
+                                        </v-btn>
+                                    </span>
+                                    <span v-else>
+                                        {{ props.item.User_ApproveID != null? "Đã duyệt" : "Chưa duyệt" }}
+                                    </span>
+                                </td>
                                 <td class="text-xs-center">
                                     <v-btn flat icon small @click="showModalAddEdit(true, props.item)" class="ma-0">
                                         <v-icon small>edit</v-icon>
@@ -77,18 +89,22 @@
                     { text: 'Thời gian', value: 'HienThi', align: 'center', sortable: true },
                     { text: 'Lý do', value: 'HienThi', align: 'center', sortable: true },
                     { text: 'Người phê duyệt', value: 'HienThi', align: 'center', sortable: true },
+                    { text: 'Trạng thái', value: 'HienThi', align: 'center', sortable: true },
                     { text: 'Thao tác', value: '#', align: 'center', sortable: false },
                 ],
                 searchParamsLeave_Request: { includeEntities: true, rowsPerPage: 10 } as Leave_RequestApiSearchParams,
                 loadingTable: false,
                 selectedLeave_Request: {} as Leave_Request,
                 dialogConfirmDelete: false,
+                laNguoiPheDuyet: false
             }
         },
         watch: {
         },
         created() {
             this.getDataFromApi();
+            if (this.$store.state.user.Profile.LoaiTaiKhoanID == 4) // admin
+                this.laNguoiPheDuyet = true
         },
         methods: {
             getDataFromApi(): void {
@@ -98,6 +114,13 @@
             },
             showModalAddEdit(isUpdate: boolean, item: any){
                 (this.$refs.themSuaDonXinNghi as any).show(isUpdate, item);
+            },
+            duyetDon(item: any) {
+                Leave_RequestApi.update(item.Id, item).then(res => {
+                    this.$snotify.success('Duyệt đơn thành công!');
+                }).catch(res => {
+                    this.$snotify.error('Duyệt đơn thất bại!');
+                });
             },
             confirmDelete(leaveRequest: Leave_Request): void {
                 this.selectedLeave_Request = leaveRequest;
