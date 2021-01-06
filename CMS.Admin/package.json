@@ -11,7 +11,7 @@
     "name": ""
   },
   "dependencies": {
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "dayspan-vuetify": "^0.3.6",
     "js-cookie": "^2.2.1",
     "vee-validate": "^2.2.15",
